@@ -396,6 +396,7 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
     final Size dialogSize = _dialogSize(context)! * textScaleFactor;
     final DialogTheme dialogTheme = Theme.of(context).dialogTheme;
     return Dialog(
+      backgroundColor: const Color(0xff232733),
       insetPadding:
           const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
       // The default dialog shape is radius 2 rounded rect, but the spec has
