@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:persian_datetime_picker/src/date/shamsi_date.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 import 'pdate_picker_common.dart';
 import 'pdate_utils.dart' as utils;
@@ -699,7 +700,7 @@ class _DayPicker extends StatelessWidget {
         Widget dayWidget = Container(
           decoration: decoration,
           child: Center(
-            child: Text(formatDecimal(day),
+            child: Text(formatDecimal(day).toPersianDigit(),
                 style: dayStyle!.apply(color: dayColor)),
           ),
         );
@@ -948,7 +949,7 @@ class _YearPickerState extends State<_YearPicker> {
         child: Center(
           child: Semantics(
             selected: isSelected,
-            child: Text(year.toString(), style: itemStyle),
+            child: Text(year.toString().toPersianDigit(), style: itemStyle),
           ),
         ),
       ),

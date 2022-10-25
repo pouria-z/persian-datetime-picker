@@ -403,7 +403,7 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
       // only if there isn't one provided in the theme.
       shape: dialogTheme.shape ??
           const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              borderRadius: BorderRadius.all(Radius.circular(30.0))),
       clipBehavior: Clip.antiAlias,
       child: Directionality(
         textDirection: TextDirection.rtl,

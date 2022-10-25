@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:persian_datetime_picker/src/date/shamsi_date.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 import 'pcalendar_date_range_picker.dart';
 import 'pdate_picker_common.dart';
@@ -540,7 +541,7 @@ class _CalendarRangePickerDialog extends StatelessWidget {
                       Row(
                         children: <Widget>[
                           Text(
-                            startDateText,
+                            startDateText.toPersianDigit(),
                             style: startDateStyle,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
@@ -551,7 +552,7 @@ class _CalendarRangePickerDialog extends StatelessWidget {
                           ),
                           Flexible(
                             child: Text(
-                              endDateText,
+                              endDateText.toPersianDigit(),
                               style: endDateStyle,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
