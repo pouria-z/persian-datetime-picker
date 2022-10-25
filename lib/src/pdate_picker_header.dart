@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 // NOTE: This is an internal implementation file. Even though there are public
 // classes and functions defined here, they are only meant to be used by the
@@ -103,7 +104,7 @@ class PDatePickerHeader extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
     );
     final Text title = Text(
-      titleText,
+      titleText.toPersianDigit(),
       semanticsLabel: titleSemanticsLabel ?? titleText,
       style: titleStyle,
       maxLines: (isShort || orientation == Orientation.portrait) ? 1 : 2,
@@ -137,7 +138,6 @@ class PDatePickerHeader extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Expanded(child: title),
-                      icon,
                     ],
                   ),
                 ],
