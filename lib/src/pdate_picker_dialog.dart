@@ -309,7 +309,7 @@ class _DatePickerDialogState extends State<_DatePickerDialog> {
         math.min(MediaQuery.of(context).textScaleFactor, 1.3);
 
     final String dateText = _selectedDate != null
-        ? _selectedDate!.formatMediumDate()
+        ? _selectedDate!.formatShortDate()
         // TODO(darrenaustin): localize 'Date'
         : 'Date';
     final Color dateColor = colorScheme.brightness == Brightness.light
