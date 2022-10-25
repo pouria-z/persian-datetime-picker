@@ -37,7 +37,7 @@ class PDatePickerHeader extends StatelessWidget {
     required this.icon,
     required this.iconTooltip,
     required this.onIconPressed,
-  }) : super(key: key);
+  })  : super(key: key);
 
   /// The text that is displayed at the top of the header.
   ///
@@ -88,8 +88,10 @@ class PDatePickerHeader extends StatelessWidget {
 
     // The header should use the primary color in light themes and surface color in dark
     final bool isDark = colorScheme.brightness == Brightness.dark;
-    final Color primarySurfaceColor = isDark ? colorScheme.surface : colorScheme.primary;
-    final Color onPrimarySurfaceColor = isDark ? colorScheme.onSurface : colorScheme.onPrimary;
+    final Color primarySurfaceColor =
+        isDark ? colorScheme.surface : colorScheme.primary;
+    final Color onPrimarySurfaceColor =
+        isDark ? colorScheme.onSurface : colorScheme.onPrimary;
 
     final TextStyle? helpStyle = textTheme.overline?.copyWith(
       color: onPrimarySurfaceColor,
@@ -102,11 +104,7 @@ class PDatePickerHeader extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
     );
     final Text title = Text(
-      titleText.toPersianDigit() +
-          titleText.toPersianDigit() +
-          titleText.toPersianDigit() +
-          titleText.toPersianDigit() +
-          titleText.toPersianDigit(),
+      titleText.toPersianDigit(),
       semanticsLabel: titleSemanticsLabel ?? titleText,
       style: titleStyle,
       maxLines: (isShort || orientation == Orientation.portrait) ? 1 : 2,
@@ -126,7 +124,7 @@ class PDatePickerHeader extends StatelessWidget {
           children: <Widget>[
             Container(
               height: _datePickerHeaderPortraitHeight,
-              color: primarySurfaceColor,
+              color: const Color(0xff232733),
               padding: const EdgeInsetsDirectional.only(
                 start: 24,
                 end: 12,
