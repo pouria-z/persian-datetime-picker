@@ -104,7 +104,7 @@ class PDatePickerHeader extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
     );
     final Text title = Text(
-      titleText.toPersianDigit()+titleText.toPersianDigit()+titleText.toPersianDigit(),
+      titleText.toPersianDigit()+titleText.toPersianDigit()+titleText.toPersianDigit()+titleText.toPersianDigit()+titleText.toPersianDigit(),
       semanticsLabel: titleSemanticsLabel ?? titleText,
       style: titleStyle,
       maxLines: (isShort || orientation == Orientation.portrait) ? 1 : 2,
