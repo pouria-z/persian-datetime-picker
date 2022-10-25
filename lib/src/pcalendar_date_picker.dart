@@ -361,7 +361,7 @@ class _DatePickerModeToggleButtonState
                       children: <Widget>[
                         Flexible(
                           child: Text(
-                            widget.title,
+                            widget.title.toPersianDigit(),
                             overflow: TextOverflow.ellipsis,
                             style: textTheme.subtitle2?.copyWith(
                               color: controlColor,
@@ -548,8 +548,8 @@ class _MonthPickerState extends State<_MonthPicker> {
   @override
   Widget build(BuildContext context) {
     final String previousTooltipText =
-        'ماه قبل ${_previousMonthDate.formatMonthYear()}';
-    final String nextTooltipText = 'ماه بعد ${_nextMonthDate.formatMonthYear()}';
+        'ماه قبل ${_previousMonthDate.formatMonthYear()}'.toPersianDigit();
+    final String nextTooltipText = 'ماه بعد ${_nextMonthDate.formatMonthYear()}'.toPersianDigit();
     final Color controlColor =
         Theme.of(context).colorScheme.onSurface.withOpacity(0.60);
 
