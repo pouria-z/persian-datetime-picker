@@ -266,7 +266,7 @@ class _CalendarDatePickerState extends State<PCalendarDatePicker> {
         // Put the mode toggle button on top so that it won't be covered up by the _MonthPicker
         _DatePickerModeToggleButton(
           mode: _mode,
-          title: formatMonthYear(_currentDisplayedMonthDate!),
+          title: formatMonthNameYear(_currentDisplayedMonthDate!),
           onTitlePressed: () {
             // Toggle the day/year mode.
             _handleModeChanged(_mode == PDatePickerMode.day

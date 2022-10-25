@@ -195,6 +195,10 @@ String formatMonthYear(Jalali date) {
   return '${date.formatter.mm} ${date.formatter.yy}';
 }
 
+String formatMonthNameYear(Jalali date) {
+  return '${date.formatter.mN} ${date.formatter.yyyy}';
+}
+
 String formatFullDate(Jalali date) {
   return '${date.formatter.wN}, ${date.formatter.m} ${date.day}, ${date.year}';
 }
