@@ -88,7 +88,7 @@ class _PCalendarDateRangePickerState extends State<PCalendarDateRangePicker> {
     super.initState();
     _controller = ScrollController();
     _controller!.addListener(_scrollListener);
-    Future.delayed(const Duration(milliseconds: 100), () {
+    Future.delayed(const Duration(milliseconds: 220), () {
       _controller!.jumpTo(_controller!.position.maxScrollExtent * 1.095);
     });
 
