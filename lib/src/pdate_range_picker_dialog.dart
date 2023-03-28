@@ -507,6 +507,7 @@ class _CalendarRangePickerDialog extends StatelessWidget {
       child: Scaffold(
         backgroundColor: const Color(0xff252a38),
         appBar: AppBar(
+          backgroundColor: const Color(0xff252a38),
           leading: CloseButton(
             onPressed: onCancel,
           ),
