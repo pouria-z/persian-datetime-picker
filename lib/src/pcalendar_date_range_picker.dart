@@ -307,9 +307,9 @@ class _CalendarKeyboardNavigatorState extends State<_CalendarKeyboardNavigator> 
 
   static const Map<TraversalDirection, int> _directionOffset = <TraversalDirection, int>{
     TraversalDirection.up: -JalaliDate.daysPerWeek,
-    TraversalDirection.right: 1,
+    TraversalDirection.left: 1,
     TraversalDirection.down: JalaliDate.daysPerWeek,
-    TraversalDirection.left: -1,
+    TraversalDirection.right: -1,
   };
 
   int? _dayDirectionOffset(TraversalDirection traversalDirection, TextDirection textDirection) {
