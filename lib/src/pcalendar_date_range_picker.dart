@@ -89,7 +89,7 @@ class _PCalendarDateRangePickerState extends State<PCalendarDateRangePicker> {
     _controller = ScrollController();
     _controller!.addListener(_scrollListener);
     Future.delayed(const Duration(milliseconds: 220), () {
-      _controller!.jumpTo(_controller!.position.maxScrollExtent * 1.095);
+      // _controller!.jumpTo(_controller!.position.maxScrollExtent * 1.095);
     });
 
     _startDate = widget.initialStartDate;
@@ -779,6 +779,7 @@ class _MonthItemState extends State<_MonthItem> {
 
     if (!isDisabled) {
       dayWidget = InkResponse(
+        autofocus: true,
         focusNode: _dayFocusNodes[day - 1],
         onTap: () => widget.onChanged(dayToBuild),
         radius: _monthItemRowHeight / 2 + 4,
