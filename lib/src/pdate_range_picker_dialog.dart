@@ -457,7 +457,7 @@ class _CalendarRangePickerDialog extends StatelessWidget {
   final ValueChanged<Jalali?> onStartDateChanged;
   final ValueChanged<Jalali?> onEndDateChanged;
   final VoidCallback? onConfirm;
-  final VoidCallback onCancel;
+  final VoidCallback? onCancel;
   final VoidCallback onToggleEntryMode;
   final String confirmText;
   final String helpText;
