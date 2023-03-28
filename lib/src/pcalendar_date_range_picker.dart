@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:persian_number_utility/persian_number_utility.dart';
 import 'package:flutter/gestures.dart' show DragStartBehavior;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -818,7 +819,7 @@ class _MonthItemState extends State<_MonthItem> {
           label: semanticLabel,
           selected: isSelectedDayStart || isSelectedDayEnd,
           child: ExcludeSemantics(
-            child: Text(formatDecimal(day), style: itemStyle),
+            child: Text(formatDecimal(day).toPersianDigit(), style: itemStyle),
           ),
         ),
       ),
@@ -934,7 +935,7 @@ class _MonthItemState extends State<_MonthItem> {
           alignment: AlignmentDirectional.centerStart,
           child: ExcludeSemantics(
             child: Text(
-              widget.displayedMonth.formatMonthYear(),
+              widget.displayedMonth.formatMonthYear().toPersianDigit(),
               style: textTheme.bodyText2!
                   .apply(color: themeData.colorScheme.onSurface),
             ),
