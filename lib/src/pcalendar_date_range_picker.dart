@@ -757,7 +757,7 @@ class _MonthItemState extends State<_MonthItem> {
       semanticLabel = localizations.dateRangeEndDateSemanticLabel(semanticLabel);
     }
 
-    Widget dayWidget = FocusableActionDetector(
+    Widget dayWidget = FocusScope(
       child: Container(
         decoration: decoration,
         child: Center(
