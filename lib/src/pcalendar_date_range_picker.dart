@@ -88,6 +88,10 @@ class _PCalendarDateRangePickerState extends State<PCalendarDateRangePicker> {
     super.initState();
     _controller = ScrollController();
     _controller!.addListener(_scrollListener);
+    Future.delayed(const Duration(milliseconds: 500), () {
+      _controller!.jumpTo(_controller!.position.maxScrollExtent);
+    });
+
     _startDate = widget.initialStartDate;
     _endDate = widget.initialEndDate;
 
@@ -307,9 +311,9 @@ class _CalendarKeyboardNavigatorState extends State<_CalendarKeyboardNavigator> 
 
   static const Map<TraversalDirection, int> _directionOffset = <TraversalDirection, int>{
     TraversalDirection.up: -JalaliDate.daysPerWeek,
-    TraversalDirection.left: 1,
+    TraversalDirection.right: 1,
     TraversalDirection.down: JalaliDate.daysPerWeek,
-    TraversalDirection.right: -1,
+    TraversalDirection.left: -1,
   };
 
   int? _dayDirectionOffset(TraversalDirection traversalDirection, TextDirection textDirection) {
@@ -661,10 +665,10 @@ class _MonthItemState extends State<_MonthItem> {
         ScrollPositionAlignmentPolicy policy = ScrollPositionAlignmentPolicy.explicit;
         switch (focusDirection) {
           case TraversalDirection.up:
-          case TraversalDirection.right:
+          case TraversalDirection.left:
             policy = ScrollPositionAlignmentPolicy.keepVisibleAtStart;
             break;
-          case TraversalDirection.left:
+          case TraversalDirection.right:
           case TraversalDirection.down:
             policy = ScrollPositionAlignmentPolicy.keepVisibleAtEnd;
             break;
