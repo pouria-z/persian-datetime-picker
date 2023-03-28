@@ -42,7 +42,7 @@ const double _kTimerPickerNumberLabelFontSize = 23;
 
 TextStyle _themeTextStyle(BuildContext context, {bool isValid = true}) {
   final TextStyle style =
-      CupertinoTheme.of(context).textTheme.dateTimePickerTextStyle;
+      CupertinoTheme.of(context).textTheme.dateTimePickerTextStyle.copyWith(color: CupertinoColors.white);
   return isValid
       ? style
       : style.copyWith(
