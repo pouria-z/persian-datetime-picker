@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 import 'package:persian_datetime_picker/src/cupertino/strings.dart';
+import 'package:persian_number_utility/persian_number_utility.dart';
 
 import 'picker.dart';
 
@@ -1371,7 +1372,7 @@ class _CupertinoDatePickerDateTimeState
 
           return itemPositioningBuilder(
             context,
-            Text(dateText, style: _themeTextStyle(context)),
+            Text(dateText.toPersianDigit(), style: _themeTextStyle(context)),
           );
         },
       ),
@@ -1894,7 +1895,7 @@ class _CupertinoDatePickerDateState extends State<_CupertinoDatePickerDate> {
           return itemPositioningBuilder(
             context,
             Text(
-              StringsText.datePickerDayOfMonth(day),
+              StringsText.datePickerDayOfMonth(day).toPersianDigit(),
               style:
                   _themeTextStyle(context, isValid: day <= daysInCurrentMonth),
             ),
@@ -1947,7 +1948,7 @@ class _CupertinoDatePickerDateState extends State<_CupertinoDatePickerDate> {
           return itemPositioningBuilder(
             context,
             Text(
-              StringsText.datePickerMonth(month),
+              StringsText.datePickerMonth(month).toPersianDigit(),
               style: _themeTextStyle(context, isValid: !isInvalidMonth),
             ),
           );
@@ -2000,7 +2001,7 @@ class _CupertinoDatePickerDateState extends State<_CupertinoDatePickerDate> {
           return itemPositioningBuilder(
             context,
             Text(
-              StringsText.datePickerYear(year),
+              StringsText.datePickerYear(year).toPersianDigit(),
               style: _themeTextStyle(context, isValid: isValidYear),
             ),
           );
@@ -2083,8 +2084,8 @@ class _CupertinoDatePickerDateState extends State<_CupertinoDatePickerDate> {
     switch (StringsText.datePickerDateOrder) {
       case DatePickerDateOrder.mdy:
         pickerBuilders = <_ColumnBuilder>[
-          _buildMonthPicker,
           _buildDayPicker,
+          _buildMonthPicker,
           _buildYearPicker
         ];
         columnWidths = <double?>[
@@ -2107,9 +2108,9 @@ class _CupertinoDatePickerDateState extends State<_CupertinoDatePickerDate> {
         break;
       case DatePickerDateOrder.ymd:
         pickerBuilders = <_ColumnBuilder>[
-          _buildYearPicker,
+          _buildDayPicker,
           _buildMonthPicker,
-          _buildDayPicker
+          _buildYearPicker
         ];
         columnWidths = <double?>[
           estimatedColumnWidths[_PickerColumnType.year.index],
@@ -2119,9 +2120,9 @@ class _CupertinoDatePickerDateState extends State<_CupertinoDatePickerDate> {
         break;
       case DatePickerDateOrder.ydm:
         pickerBuilders = <_ColumnBuilder>[
-          _buildYearPicker,
           _buildDayPicker,
-          _buildMonthPicker
+          _buildMonthPicker,
+          _buildYearPicker
         ];
         columnWidths = <double?>[
           estimatedColumnWidths[_PickerColumnType.year.index],
