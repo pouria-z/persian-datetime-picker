@@ -88,8 +88,8 @@ class _PCalendarDateRangePickerState extends State<PCalendarDateRangePicker> {
     super.initState();
     _controller = ScrollController();
     _controller!.addListener(_scrollListener);
-    Future.delayed(const Duration(milliseconds: 1000), () {
-      _controller!.jumpTo(_controller!.position.maxScrollExtent);
+    Future.delayed(const Duration(milliseconds: 250), () {
+      _controller!.jumpTo(_controller!.position.maxScrollExtent*2);
     });
 
     _startDate = widget.initialStartDate;
