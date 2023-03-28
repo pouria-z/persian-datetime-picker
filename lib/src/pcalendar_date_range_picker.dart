@@ -88,14 +88,6 @@ class _PCalendarDateRangePickerState extends State<PCalendarDateRangePicker> {
     super.initState();
     _controller = ScrollController();
     _controller!.addListener(_scrollListener);
-    Future.delayed(const Duration(milliseconds: 250), () {
-      _controller!.animateTo(
-        _controller!.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 100),
-        curve: Curves.ease,
-      );
-    });
-
     _startDate = widget.initialStartDate;
     _endDate = widget.initialEndDate;
 
@@ -669,10 +661,10 @@ class _MonthItemState extends State<_MonthItem> {
         ScrollPositionAlignmentPolicy policy = ScrollPositionAlignmentPolicy.explicit;
         switch (focusDirection) {
           case TraversalDirection.up:
-          case TraversalDirection.left:
+          case TraversalDirection.right:
             policy = ScrollPositionAlignmentPolicy.keepVisibleAtStart;
             break;
-          case TraversalDirection.right:
+          case TraversalDirection.left:
           case TraversalDirection.down:
             policy = ScrollPositionAlignmentPolicy.keepVisibleAtEnd;
             break;
