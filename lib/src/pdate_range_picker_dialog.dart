@@ -336,7 +336,7 @@ class _DateRangePickerDialogState extends State<_DateRangePickerDialog> {
           onStartDateChanged: _handleStartDateChanged,
           onEndDateChanged: _handleEndDateChanged,
           onConfirm: _hasSelectedDateRange ? _handleOk : null,
-          onCancel: _handleOk,
+          onCancel: _hasSelectedDateRange ? _handleOk : null,
           onToggleEntryMode: _handleEntryModeToggle,
           confirmText: widget.saveText ?? "تایید",
           helpText: widget.helpText ?? "انتخاب تاریخ",
