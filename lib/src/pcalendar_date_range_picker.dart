@@ -757,14 +757,16 @@ class _MonthItemState extends State<_MonthItem> {
       semanticLabel = localizations.dateRangeEndDateSemanticLabel(semanticLabel);
     }
 
-    Widget dayWidget = Container(
-      decoration: decoration,
-      child: Center(
-        child: Semantics(
-          label: semanticLabel,
-          selected: isSelectedDayStart || isSelectedDayEnd,
-          child: ExcludeSemantics(
-            child: Text(formatDecimal(day).toPersianDigit(), style: itemStyle),
+    Widget dayWidget = FocusableActionDetector(
+      child: Container(
+        decoration: decoration,
+        child: Center(
+          child: Semantics(
+            label: semanticLabel,
+            selected: isSelectedDayStart || isSelectedDayEnd,
+            child: ExcludeSemantics(
+              child: Text(formatDecimal(day).toPersianDigit(), style: itemStyle),
+            ),
           ),
         ),
       ),
